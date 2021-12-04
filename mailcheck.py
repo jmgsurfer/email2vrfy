@@ -1,6 +1,6 @@
 import re
 import argparse
-import whois # modulepython-whois
+import whois # module python-whois
 import dns.resolver# DNSPYTHON
 import socket
 import smtplib
@@ -12,10 +12,9 @@ import smtplib
 # [ ] check with SMTP
 
 #
-def parse_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-e', '--email', type=str, help="Email")
-    return parser.parse_args()
+parser = argparse.ArgumentParser()
+parser.add_argument('-e', '--email', type=str, help="Email")
+args = parser.parse_args()
 
 def emailFormatValid(email):
     EMAIL_REGEX = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)'
@@ -63,7 +62,6 @@ def smtpChat(): # source: https://www.scottbrady91.com/Email-Verification/Python
     else:
         print('N')
 
-args = parse_args()
 mail = args.email
 
 temp = "Adresse: " + mail 
