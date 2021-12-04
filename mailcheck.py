@@ -1,7 +1,7 @@
 import re
 import argparse
 import whois # module python-whois
-import dns.resolver# DNSPYTHON
+import dns.resolver# module dnspython
 import socket
 import smtplib
 #
